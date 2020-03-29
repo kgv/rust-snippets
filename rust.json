@@ -1,0 +1,290 @@
+{
+    "attribute": {
+        "prefix": "#",
+        "body": [
+            "#[${1:name}($2)]"
+        ]
+    },
+    "attribute cfg": {
+        "prefix": "cfg",
+        "body": [
+            "#[cfg($1)]"
+        ]
+    },
+    "attribute cfg feature": {
+        "prefix": "cfgf",
+        "body": [
+            "#[cfg(feature = \"$1\")]"
+        ]
+    },
+    "attribute derive": {
+        "prefix": "derive",
+        "body": [
+            "#[derive($1)]"
+        ]
+    },
+    "attribute derive a few useful traits": {
+        "prefix": "derive*",
+        "body": [
+            "#[derive(Clone, Copy, Debug, Default$1)]"
+        ]
+    },
+    "closure": {
+        "prefix": "||",
+        "body": [
+            "$1|$2| $3"
+        ]
+    },
+    "closure with block": {
+        "prefix": "||{}",
+        "body": [
+            "$1|$2| {",
+            "    $3",
+            "}"
+        ]
+    },
+    "doc inner examples": {
+        "prefix": "//!e",
+        "body": [
+            "//! # Examples",
+            "//!",
+            "//! ```",
+            "//! ${1:example}",
+            "//! ```"
+        ]
+    },
+    "doc inner panics": {
+        "prefix": "//!p",
+        "body": [
+            "//! # Panics",
+            "//!",
+            "//! ${1:This function will panic if rhs is 0.}"
+        ]
+    },
+    "doc inner safety": {
+        "prefix": "//!s",
+        "body": [
+            "//! # Safety",
+            "//!",
+            "//! ${1:...}"
+        ]
+    },
+    "doc outer examples": {
+        "prefix": "///e",
+        "body": [
+            "/// # Examples",
+            "///",
+            "/// ```",
+            "/// ${1:example}",
+            "/// ```"
+        ]
+    },
+    "doc outer panics": {
+        "prefix": "///p",
+        "body": [
+            "/// # Panics",
+            "///",
+            "/// ${1:This function will panic if rhs is 0.}"
+        ]
+    },
+    "doc outer safety": {
+        "prefix": "///s",
+        "body": [
+            "/// # Safety",
+            "///",
+            "/// ${1:...}"
+        ]
+    },
+    "enum": {
+        "prefix": "enum",
+        "body": [
+            "$1enum $2 {",
+            "    $3",
+            "}"
+        ]
+    },
+    "for": {
+        "prefix": "for",
+        "body": [
+            "for $1 in $2 {",
+            "    $3",
+            "}"
+        ]
+    },
+    "function": {
+        "prefix": "fn",
+        "body": [
+            "$1fn ${2:name}($3) $4{",
+            "    $5",
+            "}"
+        ]
+    },
+    "function main": {
+        "prefix": "main",
+        "body": [
+            "fn main() {",
+            "    $1",
+            "}"
+        ]
+    },
+    "function new": {
+        "prefix": "new",
+        "body": [
+            "$1fn new($2) -> ${3:Self} {",
+            "    $4",
+            "}"
+        ]
+    },
+    "if": {
+        "prefix": "if",
+        "body": [
+            "if $1 {",
+            "    $2",
+            "}"
+        ]
+    },
+    "if else": {
+        "prefix": "ife",
+        "body": [
+            "if $1 {",
+            "    $2",
+            "} else {",
+            "    $3",
+            "}"
+        ]
+    },
+    "if let": {
+        "prefix": "ifl",
+        "body": [
+            "if let $1 = $2 {",
+            "    $3",
+            "}"
+        ]
+    },
+    "impl": {
+        "prefix": "impl",
+        "body": [
+            "impl $1 {",
+            "    ${2:fn ${3:name}();}",
+            "}"
+        ]
+    },
+    "impl trait": {
+        "prefix": "implf",
+        "body": [
+            "impl $1 for $2 {",
+            "    $3",
+            "}"
+        ]
+    },
+    "let": {
+        "prefix": "let",
+        "body": [
+            "let $1 = $2;"
+        ]
+    },
+    "macro": {
+        "prefix": "macro",
+        "body": [
+            "$1macro($2) {",
+            "    $3",
+            "}"
+        ]
+    },
+    "macro rules": {
+        "prefix": "macror",
+        "body": [
+            "macro_rules! $1 {",
+            "    ($2) => {",
+            "        $3",
+            "    };",
+            "}"
+        ]
+    },
+    "macro println": {
+        "prefix": "println",
+        "body": [
+            "println!(\"$1: {}\", $1);"
+        ]
+    },
+    "macro todo": {
+        "prefix": "todo",
+        "body": [
+            "todo!(); // TODO: ${1:...}"
+        ]
+    },
+    "macro unimplemented": {
+        "prefix": "unimplemented",
+        "body": [
+            "unimplemented!(); // TODO"
+        ]
+    },
+    "macro unreachable": {
+        "prefix": "unreachable",
+        "body": [
+            "unreachable!();"
+        ]
+    },
+    "match": {
+        "prefix": "match",
+        "body": [
+            "match $1 {",
+            "    $2 => $3,",
+            "    ${4:_} => $5,",
+            "}"
+        ]
+    },
+    "mod": {
+        "prefix": "mod",
+        "body": [
+            "mod $1 {",
+            "    $0",
+            "}"
+        ]
+    },
+    "struct": {
+        "prefix": "struct",
+        "body": [
+            "$1struct $2 {",
+            "    $3",
+            "}"
+        ]
+    },
+    "test function": {
+        "prefix": "test",
+        "body": [
+            "#[test]",
+            "fn ${1:test}() {",
+            "    $2",
+            "}"
+        ]
+    },
+    "test module": {
+        "prefix": "testm",
+        "body": [
+            "#[cfg(test)]",
+            "mod ${1:test} {",
+            "    ${2:use super::*;}",
+            "",
+            "    #[test]",
+            "    fn ${3:test}() {",
+            "        $4",
+            "    }",
+            "}"
+        ]
+    },
+    "trait": {
+        "prefix": "trait",
+        "body": [
+            "$1trait $2 {",
+            "    ${3:fn ${4:name}();}",
+            "}"
+        ]
+    },
+    "type": {
+        "prefix": "type",
+        "body": [
+            "type $1 = $2;"
+        ]
+    }
+}
