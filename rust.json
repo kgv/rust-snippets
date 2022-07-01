@@ -36,7 +36,7 @@
         ]
     },
     "closure with block": {
-        "prefix": "||{}",
+        "prefix": "|| {}",
         "body": [
             "$1|$2| {",
             "    $3",
@@ -44,7 +44,7 @@
         ]
     },
     "doc inner examples": {
-        "prefix": "//!e",
+        "prefix": "//! e",
         "body": [
             "//! # Examples",
             "//!",
@@ -54,7 +54,7 @@
         ]
     },
     "doc inner panics": {
-        "prefix": "//!p",
+        "prefix": "//! p",
         "body": [
             "//! # Panics",
             "//!",
@@ -62,7 +62,7 @@
         ]
     },
     "doc inner safety": {
-        "prefix": "//!s",
+        "prefix": "//! s",
         "body": [
             "//! # Safety",
             "//!",
@@ -70,7 +70,7 @@
         ]
     },
     "doc outer examples": {
-        "prefix": "///e",
+        "prefix": "/// e",
         "body": [
             "/// # Examples",
             "///",
@@ -80,7 +80,7 @@
         ]
     },
     "doc outer panics": {
-        "prefix": "///p",
+        "prefix": "/// p",
         "body": [
             "/// # Panics",
             "///",
@@ -88,7 +88,7 @@
         ]
     },
     "doc outer safety": {
-        "prefix": "///s",
+        "prefix": "/// s",
         "body": [
             "/// # Safety",
             "///",
